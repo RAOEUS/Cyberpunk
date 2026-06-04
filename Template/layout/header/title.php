@@ -1,9 +1,9 @@
-<?php global $themeNebulaConfig; ?>
+<?php global $themeCyberpunkConfig; ?>
     <span class="logo">
-        <?php if (!isset($themeNebulaConfig['logo'])) : ?>
+        <?php if (!isset($themeCyberpunkConfig['logo'])) : ?>
             <?= $this->url->link('K<span>B</span>', 'DashboardController', 'show', array(), false, '', t('Dashboard')) ?>
         <?php else: ?>
-            <?= $this->url->link('<img src="'.$themeNebulaConfig['logo'].'" style="float: left;max-height: 40px;margin-top: -7px;margin-right: 10px;" />', 'DashboardController', 'show', array(), false, '', t('Dashboard')) ?>
+            <?= $this->url->link('<img src="'.$themeCyberpunkConfig['logo'].'" style="float: left;max-height: 40px;margin-top: -7px;margin-right: 10px;" />', 'DashboardController', 'show', array(), false, '', t('Dashboard')) ?>
         <?php endif ?>
     </span>
 <h1>

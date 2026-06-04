@@ -1,4 +1,4 @@
-plugin = Nebula
+plugin = Cyberpunk
 
 all:
 	@ echo "Build archive for plugin ${plugin}"

@@ -46,14 +46,17 @@ A Cyberpunk 2077-inspired theme for [Kanboard](https://kanboard.org/).
 
 1. Install from the Kanboard plugin manager, **or**
 2. Download the zip and extract to `plugins/Cyberpunk`, **or**
-3. Clone this repository:
+3. Clone this repository into your Kanboard plugins directory:
    ```
-   git clone https://github.com/RAOEUS/Cyberpunk.git plugins/Cyberpunk
+   cd /path/to/kanboard/plugins
+   git clone https://github.com/RAOEUS/cyberpunk-kanboard.git Cyberpunk
    ```
 
-> Plugin folder is case-sensitive. Remove all unused themes.
+> The folder **must** be named `Cyberpunk` (case-sensitive) — Kanboard loads plugins by folder name.
 
 ## Configuration
+
+On first run, the plugin copies a config file to `data/files/Cyberpunk/config.php`. Edit that file to customize settings.
 
 ### Custom Logo
 

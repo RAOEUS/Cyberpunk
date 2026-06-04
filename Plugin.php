@@ -85,7 +85,7 @@ class Plugin extends Base
 
     public function getPluginHomepage()
     {
-        return 'https://github.com/kenlog/cyberpunk';
+        return 'https://github.com/RAOEUS/cyberpunk-kanboard';
     }
 
 }

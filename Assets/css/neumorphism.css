@@ -245,7 +245,7 @@ a.btn { text-decoration: none }
 
 .tooltip i.fa { cursor: pointer }
 .tooltip .fa-info-circle { color: var(--t3) }
-#tooltip-container { padding: 14px 18px; background: var(--neu); border: none; border-radius: var(--radius-sm); box-shadow: 0 8px 32px rgba(0,0,0,0.25); position: absolute; min-width: 350px; margin-top: 20px }
+#tooltip-container { padding: 14px 18px; background: var(--neu); border: none; border-radius: var(--radius-sm); box-shadow: 0 8px 32px rgba(0,0,0,0.25); position: absolute; min-width: 350px; margin-top: 15px; z-index: 1000 }
 #tooltip-container .markdown p { margin-bottom: 0 }
 #tooltip-container .tooltip-large { width: 600px }
 
@@ -290,7 +290,7 @@ td a.dropdown-menu:hover strong { color: var(--accent) }
 .select-dropdown-input-container { border: none; border-radius: var(--radius-sm); background: var(--neu) !important; box-shadow: var(--sh-in-sm); padding: 4px 0; position: relative }
 .select-dropdown-input-container input.select-dropdown-input { margin: 0 0 0 10px; border: none; height: 30px; box-shadow: none !important; background: transparent !important; color: var(--t1); font-family: var(--font) }
 .select-dropdown-input-container input.select-dropdown-input:focus { box-shadow: none !important }
-.select-dropdown-input-container .select-dropdown-chevron { color: var(--t2); position: absolute; top: 8px; right: 10px; cursor: pointer }
+.select-dropdown-input-container .select-dropdown-chevron { color: var(--t2); position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer }
 .board-selector-container .select-dropdown-input-container { max-width: none }
 
 #suggest-menu { position: absolute; display: block; z-index: 1000; min-width: 160px; padding: 8px 0; background: var(--neu); list-style: none; border-radius: var(--radius-sm); box-shadow: 0 8px 32px rgba(0,0,0,0.25) }
@@ -553,7 +553,13 @@ a .fa {
 }
 .subtask-submenu i:hover,
 .dropdown-menu-link-icon:hover i,
-.draggable-row-handle:hover {
+.draggable-row-handle:hover,
+.task-board-icons a:hover,
+.task-board-icons a:hover i,
+.task-list-icons a:hover,
+.task-list-icons a:hover i,
+.tooltip:hover i,
+a:hover .fa {
     color: var(--accent) !important;
 }
 @media (max-width: 768px) { .subtask-cell { width: 90%; display: block } }

@@ -33,7 +33,7 @@ class Plugin extends Base
             $this->template->setTemplateOverride('header/creation_dropdown', 'Cyberpunk:layout/header/creation_dropdown');
         }
 
-        $this->hook->on("template:layout:css", array("template" => "plugins/Cyberpunk/Assets/css/nebula.css"));
+        $this->hook->on("template:layout:css", array("template" => "plugins/Cyberpunk/Assets/css/cyberpunk.css"));
 
         $this->hook->on("template:layout:css", array("template" => "plugins/Cyberpunk/Assets/css/prism.css"));
 
@@ -41,7 +41,7 @@ class Plugin extends Base
 
         $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/prism.js'));
 
-        $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/nebula.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/cyberpunk.js'));
     }
 
     public function getPluginName()
@@ -71,7 +71,7 @@ class Plugin extends Base
 
     public function getPluginHomepage()
     {
-        return 'https://github.com/kenlog/nebula';
+        return 'https://github.com/kenlog/cyberpunk';
     }
 
 }

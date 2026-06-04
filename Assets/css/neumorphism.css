@@ -426,8 +426,8 @@ a i.web-notification-icon:hover { color: var(--accent-hover) }
 
 #board-container { overflow-x: auto; padding: 6px }
 #board { table-layout: fixed; margin-bottom: 0; border-collapse: separate; border-spacing: 10px 0 }
-#board th.board-column-header { width: 240px; background: var(--neu); border: none; border-radius: var(--radius-sm); padding: 12px; box-shadow: var(--sh-out-sm) }
-#board td { vertical-align: top; background: var(--neu); border: none; border-radius: 0 0 var(--radius-sm) var(--radius-sm); padding: 10px }
+#board th.board-column-header { width: 240px; background: var(--neu) !important; border: none !important; border-radius: var(--radius-sm) !important; padding: 12px !important; box-shadow: var(--sh-out-sm) !important; position: relative; z-index: 2 }
+#board td { vertical-align: top; background: var(--neu) !important; border: none !important; border-radius: var(--radius-sm) !important; padding: 10px !important; position: relative; z-index: 1 }
 .board-container-compact { overflow-x: initial }
 #board th.board-column-header.board-column-compact { width: initial }
 .board-column-collapsed { display: none }

@@ -59,8 +59,13 @@ $(document).ready(function () {
         }, 10);
     });
 
-    // Header title glitch — same system as cyberGlitch but on the .title span
-    // Faster bursts while hovering, slower idle pulses when not
+    // ══════════════════════════════════════════
+    //  GLITCH SYSTEM (gated by --glitch-enabled)
+    // ══════════════════════════════════════════
+    var glitchEnabled = getComputedStyle(document.documentElement).getPropertyValue('--glitch-enabled').trim() !== '0';
+
+    if (glitchEnabled) {
+    // Header title glitch
     var titleEl = document.querySelector('header h1 .title');
     var titleHovered = false;
     var titleGlitchTimer = null;
@@ -195,4 +200,5 @@ $(document).ready(function () {
             .to(el, { duration: r(0.06, 0.1) })
             .set(el, { textShadow: 'none', clearProps: 'textShadow' });
     });
+    } // end glitch-enabled
 });

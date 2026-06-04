@@ -19,6 +19,8 @@
 @font-face { font-family: 'Iosevka Term NF'; src: url('../fonts/IosevkaTermNerdFont-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
 
 :root {
+    --glitch-enabled: 1; /* Set to 0 to disable all glitch/hover effects */
+
     --bg-void: #04060c;
     --bg-deep: #080c18;
     --bg-base: #0b1020;

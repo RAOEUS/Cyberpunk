@@ -1,87 +1,100 @@
-## Checkout our latest project
+# Cyberpunk
 
-- [Global Search Plugin for Kanboard](https://github.com/kenlog/global-search-kanboard.git) 
------------
+A Cyberpunk 2077-inspired theme for [Kanboard](https://kanboard.org/). 
 
-[![Latest release](https://img.shields.io/github/release/kenlog/Cyberpunk.svg)](https://github.com/kenlog/Cyberpunk/releases)
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/kenlog/Cyberpunk/blob/master/LICENSE)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/kenlog/Cyberpunk/graphs/contributors)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)]()
-[![Downloads](https://img.shields.io/github/downloads/kenlog/Cyberpunk/total.svg)](https://github.com/kenlog/Cyberpunk/releases)
+## Screenshots
 
-# Cyberpunk plugin (modern theme for kanboard)
+### Board View
+![Board](Assets/images/screenshots/board.png)
 
-<noscript><a href="https://liberapay.com/kenlog/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
-<a href="https://paypal.me/kenlog"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /></a>
+### Task Detail
+![Task Detail](Assets/images/screenshots/task-detail.png)
 
-This theme allows you to add special features like replacing the logo and adds syntax highlighting for Markdown code.
+### Task List
+![Task List](Assets/images/screenshots/task-list.png)
 
-# Screenshot
-![board](https://user-images.githubusercontent.com/11728231/48299849-78c1cf80-e4d3-11e8-8d3a-83b25f86f6f9.jpg)
-![task1](https://user-images.githubusercontent.com/11728231/48299850-78c1cf80-e4d3-11e8-89c4-03cc85af8345.jpg)
-![task2](https://user-images.githubusercontent.com/11728231/48299851-78c1cf80-e4d3-11e8-800a-9325cff01ade.jpg)
-![task3](https://user-images.githubusercontent.com/11728231/48299852-78c1cf80-e4d3-11e8-8861-9582a17dacb1.jpg)
-![chart](https://user-images.githubusercontent.com/11728231/43127800-9fc1e370-8f30-11e8-92d8-f4129b642349.jpg)
+### Project Overview
+![Project Overview](Assets/images/screenshots/project-overview.png)
 
+### Dashboard
+![Dashboard](Assets/images/screenshots/dashboard.png)
 
+### Analytics
+![Analytics](Assets/images/screenshots/analytics.png)
 
-Author
-------------
-- Valentino Pesce
-- License MIT
+## Features
 
-Requirements
-------------
-Kanboard >= v1.0.48  
-Kanboard installed at a web server.
-You can find the download at [kanboard.org](https://kanboard.org/)
+- **CP2077 aesthetic** - Angular Chakra Petch display font, Iosevka monospace body, sharp zero-radius edges, neon cyan/magenta/purple accents
+- **Animated header** - Rainbow neon gradient line with smooth looping animation
+- **Scanlines + CRT vignette** - Subtle overlay for that authentic retro-future feel
+- **Digital glitch on hover** - Randomized clip-path tears, opacity flashes, hue corruption, RGB channel split shadows on every interactive element
+- **Periodic title glitch** - Header title glitches randomly, faster when hovered
+- **GSAP animations** - Staggered entrance animations for cards, columns, nav items, modals, dropdowns, overview stats (with count-up)
+- **Drag-and-drop fix** - Clean card dragging with no lag or position offset
+- **Custom SVG logo** - Hexagonal cyber-eye emblem, links to dashboard
+- **Full C3 chart theming** - Dark tooltips, themed axes and grid lines
+- **WCAG AA contrast** - All text passes 4.5:1 minimum contrast ratio
+- **Syntax highlighting** - 151+ languages via Prism.js, tuned to the neon palette
+- **Customizer plugin support** - Compatible with the [Customizer](https://github.com/creecros/Customizer) plugin
+- **Bundled fonts** - Chakra Petch (display) + Iosevka Term Nerd Font (mono), no external CDN dependencies
 
-Installation
-------------
-You have the choice between 3 methods:
+## Requirements
 
-1. Install the plugin from the Kanboard plugin manager in one click
-2. Download the zip file and decompress everything under the directory `plugins/Cyberpunk`
-3. Clone this repository into the folder `plugins/Cyberpunk`
+- Kanboard >= v1.0.48
 
-Note: Plugin folder is case-sensitive.  
-**Important: remove all unused themes**
+## Installation
 
-Add options for the theme
-------------
-- Replace the KB logo with your own logo  
-For more information have a look in the config.php  
-### Supports the [Customizer](https://github.com/creecros/Customizer) plugin
+1. Install from the Kanboard plugin manager, **or**
+2. Download the zip and extract to `plugins/Cyberpunk`, **or**
+3. Clone this repository:
+   ```
+   git clone https://github.com/RAOEUS/Cyberpunk.git plugins/Cyberpunk
+   ```
 
-Syntax highlighting for Markdown code
-------------
-151 languages currently supported by Prism, with their corresponding alias, to use in place of xxxx
- 
-```diff
--```xxxx
+> Plugin folder is case-sensitive. Remove all unused themes.
+
+## Configuration
+
+### Custom Logo
+
+Replace the default logo by editing `data/files/Cyberpunk/config.php`:
+
+```php
+$themeCyberpunkConfig['logo'] = 'plugins/Cyberpunk/Assets/images/your-logo.svg';
+```
+
+### Disable Glitch Effects
+
+The hover glitch effects (clip-path tears, RGB split, opacity flashes, hue corruption) can be turned off site-wide by adding this to Kanboard's **Settings > Custom Stylesheet**:
+
+```css
+:root {
+    --glitch-enabled: 0;
+}
+```
+
+Set back to `1` (or remove the override) to re-enable.
+
+## Syntax Highlighting
+
+Use fenced code blocks with a language identifier:
+
+~~~
+```php
 class BaseClass {
     function __construct() {
         print "In BaseClass constructor\n";
     }
 }
--```
-+```php
-class BaseClass {
-    function __construct() {
-        print "In BaseClass constructor\n";
-    }
-}
-+```
-
 ```
-### :star: If you like it, do not forget to give a star on GitHub! 
+~~~
 
-:construction_worker: Any contribution will be highly appreciated
-------------
-Clone the repository: 
-```console 
-git clone https://github.com/RAOEUS/Cyberpunk.git
-```
-:bug: Reporting Issues
-------------
-Please [create an issue](https://github.com/RAOEUS/Cyberpunk/issues) for any bugs you've found.
+151 languages supported via Prism.js.
+
+## License
+
+MIT
+
+## Credits
+
+Originally based on [Nebula](https://github.com/kenlog/nebula) by Valentino Pesce.

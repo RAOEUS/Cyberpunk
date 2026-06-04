@@ -426,7 +426,7 @@ a i.web-notification-icon:hover { color: var(--accent-hover) }
 
 #board-container { overflow-x: auto; padding: 6px }
 #board { table-layout: fixed; margin-bottom: 0; border-collapse: separate; border-spacing: 4px 0 }
-#board th.board-column-header { width: 240px; background: var(--neu) !important; border: none !important; border-radius: var(--radius-sm) !important; padding: 12px !important; box-shadow: var(--sh-out-sm) !important }
+#board th.board-column-header { width: 240px; background: var(--neu) !important; border: none !important; border-radius: var(--radius-sm) !important; padding: 12px !important; box-shadow: var(--sh-out-sm) !important; position: relative; z-index: 1 }
 #board td { vertical-align: top; background: var(--neu) !important; border: none !important; border-radius: var(--radius-sm) !important; padding: 10px !important }
 .board-container-compact { overflow-x: initial }
 #board th.board-column-header.board-column-compact { width: initial }
@@ -443,7 +443,7 @@ td.board-column-task-collapsed { font-weight: bold }
 a.board-swimlane-toggle { text-decoration: none }
 a.board-swimlane-toggle:hover { color: var(--accent) }
 
-.board-task-list { min-height: 60px }
+.board-task-list { min-height: 60px; padding-top: 6px }
 .board-task-list .task-board:last-child { margin-bottom: 0 }
 .board-task-list-limit { background: rgba(239,100,97,0.06) }
 .draggable-item { cursor: pointer; user-select: none }

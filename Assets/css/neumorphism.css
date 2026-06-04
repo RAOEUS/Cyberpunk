@@ -246,9 +246,9 @@ a.btn { text-decoration: none }
 .btn:hover { box-shadow: var(--sh-out); color: var(--accent); transform: translateY(-1px) }
 .btn:active { box-shadow: var(--sh-in-sm); transform: translateY(0) }
 .btn-red { color: var(--danger) }
-.btn-red:hover { background: var(--danger); color: #fff; box-shadow: 0 4px 12px rgba(239,100,97,0.3) }
+.btn-red:hover { background: var(--danger) !important; color: #fff !important; box-shadow: 0 4px 12px rgba(239,100,97,0.3) }
 .btn-blue { color: var(--accent) }
-.btn-blue:hover { background: var(--accent); color: #fff; box-shadow: 0 4px 12px rgba(124,92,245,0.3) }
+.btn-blue:hover { background: var(--accent) !important; color: #fff !important; box-shadow: 0 4px 12px rgba(124,92,245,0.3) }
 .btn:disabled { color: var(--t3); opacity: 0.4; cursor: not-allowed; box-shadow: none; transform: none }
 .buttons-header { font-size: 0.8em; margin-top: 5px; margin-bottom: 15px }
 
@@ -691,7 +691,7 @@ input, textarea, select,
 ul.dropdown-submenu-open, #select-dropdown-menu, #suggest-menu,
 #tooltip-container, #modal-box, .form-login,
 .sidebar, header, .views, .views li,
-.btn, .task-tags li,
+.btn:not(:hover), .task-tags li,
 .task-summary-container, .project-overview-column,
 .file-thumbnail, .ganttview, .ganttview-block,
 .markdown pre, .markdown blockquote, .markdown img,

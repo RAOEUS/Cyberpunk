@@ -13,7 +13,7 @@ $(document).ready(function () {
     $(document).on('sortstop', function () { isDragging = false; });
 
     // ══════════════════════════════════════════
-    //  COOKIE-BASED DARK/LIGHT THEME TOGGLE
+    //  THREE-MODE THEME: system / light / dark
     // ══════════════════════════════════════════
     function getCookie(name) {
         var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -25,21 +25,54 @@ $(document).ready(function () {
         document.cookie = name + '=' + value + ';path=/;expires=' + d.toUTCString() + ';SameSite=Lax';
     }
 
-    var savedTheme = getCookie('neu_theme');
-    if (savedTheme === 'light') document.body.classList.add('light-mode');
+    var modes = ['system', 'light', 'dark'];
+    var modeIcons = {
+        system: '<i class="fa fa-desktop"></i>',
+        light: '<i class="fa fa-sun-o"></i>',
+        dark: '<i class="fa fa-moon-o"></i>',
+    };
+    var modeLabels = {
+        system: 'System theme',
+        light: 'Light mode',
+        dark: 'Dark mode',
+    };
+
+    function systemPrefersDark() {
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    function applyMode(mode) {
+        if (mode === 'light' || (mode === 'system' && !systemPrefersDark())) {
+            document.body.classList.add('light-mode');
+        } else {
+            document.body.classList.remove('light-mode');
+        }
+    }
+
+    var currentMode = getCookie('neu_theme') || 'system';
+    if (modes.indexOf(currentMode) === -1) currentMode = 'system';
+    applyMode(currentMode);
+
+    // Listen for system theme changes when in system mode
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+            if (currentMode === 'system') applyMode('system');
+        });
+    }
 
     var toggleBtn = document.createElement('button');
     toggleBtn.id = 'neu-theme-toggle';
-    toggleBtn.innerHTML = document.body.classList.contains('light-mode') ? '<i class="fa fa-moon-o"></i>' : '<i class="fa fa-sun-o"></i>';
-    toggleBtn.title = 'Toggle light/dark mode';
+    toggleBtn.innerHTML = modeIcons[currentMode];
+    toggleBtn.title = modeLabels[currentMode];
     document.body.appendChild(toggleBtn);
 
     toggleBtn.addEventListener('click', function () {
-        document.body.classList.toggle('light-mode');
-        var isLight = document.body.classList.contains('light-mode');
-        setCookie('neu_theme', isLight ? 'light' : 'dark', 365);
-        toggleBtn.innerHTML = isLight ? '<i class="fa fa-moon-o"></i>' : '<i class="fa fa-sun-o"></i>';
-        // Theme colors update handled by CSS variables
+        var idx = modes.indexOf(currentMode);
+        currentMode = modes[(idx + 1) % modes.length];
+        setCookie('neu_theme', currentMode, 365);
+        applyMode(currentMode);
+        toggleBtn.innerHTML = modeIcons[currentMode];
+        toggleBtn.title = modeLabels[currentMode];
     });
 
     // ══════════════════════════════════════════

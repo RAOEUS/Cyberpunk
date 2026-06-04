@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    // ── OAUTH2 LOGIN BUTTON RENAME ──
+    $('a[href*="OAuthController"][href*="OAuth2"]').each(function () {
+        var icon = $(this).find('i').prop('outerHTML') || '';
+        $(this).html(icon + ' Log in with Biblioteca account');
+    });
+
     // ── BACK TO TOP ──
     $(window).scroll(function () {
         if ($(window).scrollTop() > 200) $('#backToTop').addClass('topshow');

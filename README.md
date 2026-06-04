@@ -3,13 +3,13 @@
 - [Global Search Plugin for Kanboard](https://github.com/kenlog/global-search-kanboard.git) 
 -----------
 
-[![Latest release](https://img.shields.io/github/release/kenlog/Nebula.svg)](https://github.com/kenlog/Nebula/releases)
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/kenlog/Nebula/blob/master/LICENSE)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/kenlog/Nebula/graphs/contributors)
+[![Latest release](https://img.shields.io/github/release/kenlog/Cyberpunk.svg)](https://github.com/kenlog/Cyberpunk/releases)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/kenlog/Cyberpunk/blob/master/LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/kenlog/Cyberpunk/graphs/contributors)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)]()
-[![Downloads](https://img.shields.io/github/downloads/kenlog/Nebula/total.svg)](https://github.com/kenlog/Nebula/releases)
+[![Downloads](https://img.shields.io/github/downloads/kenlog/Cyberpunk/total.svg)](https://github.com/kenlog/Cyberpunk/releases)
 
-# Nebula plugin (modern theme for kanboard)
+# Cyberpunk plugin (modern theme for kanboard)
 
 <noscript><a href="https://liberapay.com/kenlog/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 <a href="https://paypal.me/kenlog"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /></a>
@@ -41,8 +41,8 @@ Installation
 You have the choice between 3 methods:
 
 1. Install the plugin from the Kanboard plugin manager in one click
-2. Download the zip file and decompress everything under the directory `plugins/Nebula`
-3. Clone this repository into the folder `plugins/Nebula`
+2. Download the zip file and decompress everything under the directory `plugins/Cyberpunk`
+3. Clone this repository into the folder `plugins/Cyberpunk`
 
 Note: Plugin folder is case-sensitive.  
 **Important: remove all unused themes**
@@ -80,8 +80,8 @@ class BaseClass {
 ------------
 Clone the repository: 
 ```console 
-git clone https://github.com/kenlog/Nebula.git
+git clone https://github.com/RAOEUS/Cyberpunk.git
 ```
 :bug: Reporting Issues
 ------------
-Please [create an issue](https://github.com/kenlog/Nebula/issues) for any bugs you've found.
+Please [create an issue](https://github.com/RAOEUS/Cyberpunk/issues) for any bugs you've found.

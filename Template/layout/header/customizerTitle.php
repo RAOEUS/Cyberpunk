@@ -1,6 +1,6 @@
     <span class="logo">
         <?php if (null !== $this->task->customizerFileModel->getByType(1)) : ?>
-            <?= $this->url->link('<img src="'.$this->url->href("CustomizerFileController", "image", array("plugin" => "customizer", "file_id" => $this->task->customizerFileModel->getIdByType(1))).'" style="float: left;max-height: 40px;margin-top: -7px;margin-right: 10px;" >', 'DashboardController', 'show', array(), false, '', t('Dashboard')) ?>
+            <?= $this->url->link('<img src="'.$this->url->href("CustomizerFileController", "image", array("plugin" => "customizer", "file_id" => $this->task->customizerFileModel->getIdByType(1))).'" style="display: inline-block; height: 28px; vertical-align: middle; margin-right: 12px;" >', 'DashboardController', 'show', array(), false, '', t('Dashboard')) ?>
         <?php endif ?>
     </span>
     <h1>

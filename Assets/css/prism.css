@@ -1,20 +1,20 @@
 /* PrismJS - Cyberpunk theme
- * Based on okaidia, recolored to match Cyberpunk palette
+ * Modern syntax highlighting tuned for the Cyberpunk Kanboard theme
  */
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #d0e8ff;
+	color: #e2eafc;
 	background: none;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: 'Iosevka Nerd Font Mono', 'FiraCode Nerd Font Mono', Consolas, Monaco, monospace;
-	font-size: 1em;
+	font-family: 'Iosevka Term NF', 'Iosevka Nerd Font', 'Iosevka Term', 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 0.9em;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-	line-height: 1.5;
+	line-height: 1.6;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -28,33 +28,34 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: 1.2em;
 	margin: .5em 0;
 	overflow: auto;
-	border-radius: 0.3em;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #060b1a;
+	background: #06080f;
+	border: 1px solid rgba(100, 130, 180, 0.12);
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
+	padding: .2em .4em;
 	white-space: normal;
+	background: rgba(100, 130, 180, 0.1);
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #4a6a8a;
+	color: #566380;
+	font-style: italic;
 }
 
 .token.punctuation {
-	color: #8ab4e0;
+	color: #8899b8;
 }
 
 .token.namespace {
@@ -66,12 +67,12 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #ff2070;
+	color: #ff2d7b;
 }
 
 .token.boolean,
 .token.number {
-	color: #e040fb;
+	color: #b44dff;
 }
 
 .token.selector,
@@ -80,7 +81,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #39ff14;
+	color: #2dff6e;
 }
 
 .token.operator,
@@ -89,23 +90,23 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: #d0e8ff;
+	color: #e2eafc;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function,
 .token.class-name {
-	color: #f7e731;
+	color: #ffe34d;
 }
 
 .token.keyword {
-	color: #00e5ff;
+	color: #00f0ff;
 }
 
 .token.regex,
 .token.important {
-	color: #ff6b00;
+	color: #ff8c42;
 }
 
 .token.important,
@@ -126,8 +127,8 @@ div.code-toolbar {
 
 div.code-toolbar > .toolbar {
 	position: absolute;
-	top: .3em;
-	right: .2em;
+	top: .5em;
+	right: .5em;
 	transition: opacity 0.3s ease-in-out;
 	opacity: 0;
 }
@@ -136,8 +137,6 @@ div.code-toolbar:hover > .toolbar {
 	opacity: 1;
 }
 
-/* Separate line b/c rules are thrown out if selector is invalid.
-   IE11 and old Edge versions don't support :focus-within. */
 div.code-toolbar:focus-within > .toolbar {
 	opacity: 1;
 }
@@ -158,7 +157,7 @@ div.code-toolbar > .toolbar button {
 	line-height: normal;
 	overflow: visible;
 	padding: 0;
-	-webkit-user-select: none; /* for button */
+	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 }
@@ -166,13 +165,12 @@ div.code-toolbar > .toolbar button {
 div.code-toolbar > .toolbar a,
 div.code-toolbar > .toolbar button,
 div.code-toolbar > .toolbar span {
-	color: #4a6a8a;
+	color: #8899b8;
 	font-size: .8em;
-	padding: 0 .5em;
-	background: #152040;
-	background: rgba(0, 229, 255, 0.1);
-	box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
-	border-radius: .5em;
+	padding: 4px 10px;
+	background: rgba(0, 240, 255, 0.08);
+	border: 1px solid rgba(0, 240, 255, 0.15);
+	transition: all 0.2s ease;
 }
 
 div.code-toolbar > .toolbar a:hover,
@@ -181,6 +179,7 @@ div.code-toolbar > .toolbar button:hover,
 div.code-toolbar > .toolbar button:focus,
 div.code-toolbar > .toolbar span:hover,
 div.code-toolbar > .toolbar span:focus {
-	color: inherit;
+	color: #00f0ff;
+	background: rgba(0, 240, 255, 0.15);
 	text-decoration: none;
 }

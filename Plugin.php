@@ -20,6 +20,10 @@ class Plugin extends Base
             copy('plugins/Cyberpunk/Assets/images/brand-logo.png', DATA_DIR . '/files/Cyberpunk/Assets/images/brand-logo.png');
         }
 
+        if (isset($themeCyberpunkConfig['logo']) && strpos($themeCyberpunkConfig['logo'], 'data/files/') === 0) {
+            $themeCyberpunkConfig['logo'] = 'plugins/Cyberpunk/Assets/images/brand-logo.png';
+        }
+
         if (file_exists('plugins/Customizer'))
 		{
             $this->template->setTemplateOverride('header/title', 'Cyberpunk:layout/header/customizerTitle');
@@ -40,6 +44,16 @@ class Plugin extends Base
         $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/clipboard.min.js'));
 
         $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/prism.js'));
+
+        $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/three.min.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/CopyShader.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/LuminosityHighPassShader.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/EffectComposer.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/RenderPass.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/ShaderPass.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/UnrealBloomPass.js'));
+
+        $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/gsap.min.js'));
 
         $this->hook->on('template:layout:js', array('template' => 'plugins/Cyberpunk/Assets/js/cyberpunk.js'));
     }

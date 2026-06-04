@@ -8,4 +8,4 @@
 // The file should be to 50 Pixel is a good height
 // Uncomment the next line.
 
-$themeCyberpunkConfig['logo'] = 'data/files/Cyberpunk/Assets/images/brand-logo.png';
+$themeCyberpunkConfig['logo'] = 'plugins/Cyberpunk/Assets/images/brand-logo.png';

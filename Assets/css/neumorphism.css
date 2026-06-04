@@ -401,7 +401,7 @@ a i.web-notification-icon:hover { color: var(--accent-hover) }
 
 .project-overview-columns { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 1.3em; gap: 20px }
 @media (max-width: 480px) { .project-overview-columns { display: block } }
-.project-overview-column { text-align: center; padding: 20px 28px; background: var(--neu); border-radius: var(--radius); box-shadow: var(--sh-out); transition: all var(--speed) }
+.project-overview-column { text-align: center; padding: 20px 28px; margin-right: 0; background: var(--neu); border-radius: var(--radius); box-shadow: var(--sh-out); transition: all var(--speed) }
 .project-overview-column:hover { transform: translateY(-3px); box-shadow: 8px 8px 16px var(--neu-dark), -8px -8px 16px var(--neu-light) }
 .project-overview-column small { color: var(--t3) }
 .project-overview-column strong { color: var(--accent); display: block; font-size: 1.6em; font-weight: 700; font-family: var(--font-display) }

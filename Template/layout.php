@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="robots" content="noindex,nofollow">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="referrer" content="no-referrer">
@@ -14,7 +15,11 @@
 
         <?= $this->asset->colorCss() ?>
         <?= $this->asset->css('assets/css/vendor.min.css') ?>
-        <?= $this->asset->css('assets/css/app.min.css') ?>
+        <?php if (! isset($not_editable)): ?>
+            <?= $this->asset->css('assets/css/'.$this->user->getTheme().'.min.css') ?>
+        <?php else: ?>
+            <?= $this->asset->css('assets/css/light.min.css') ?>
+        <?php endif ?>
         <?= $this->asset->css('assets/css/print.min.css', true, 'print') ?>
         <?= $this->asset->customCss() ?>
 

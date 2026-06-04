@@ -1,47 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" height="32">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" height="30">
   <defs>
-    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff"/>
-      <stop offset="100%" stop-color="#a855f7"/>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b6fff"/>
+      <stop offset="100%" stop-color="#b8a4ff"/>
     </linearGradient>
-    <linearGradient id="g2" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff1e6f"/>
-      <stop offset="100%" stop-color="#00f0ff"/>
-    </linearGradient>
-    <filter id="gl">
-      <feGaussianBlur stdDeviation="1.5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
-
-  <!-- Outer hex -->
-  <polygon points="22,2 40,12 40,32 22,42 4,32 4,12" fill="none" stroke="url(#g1)" stroke-width="1.2" filter="url(#gl)" opacity="0.7"/>
-
-  <!-- Inner hex -->
-  <polygon points="22,8 34,14.5 34,29.5 22,36 10,29.5 10,14.5" fill="none" stroke="url(#g2)" stroke-width="0.8" opacity="0.5"/>
-
-  <!-- Circuit lines -->
-  <line x1="22" y1="2" x2="22" y2="8" stroke="#00f0ff" stroke-width="0.6" opacity="0.4"/>
-  <line x1="22" y1="36" x2="22" y2="42" stroke="#ff1e6f" stroke-width="0.6" opacity="0.4"/>
-  <line x1="4" y1="12" x2="10" y2="14.5" stroke="#00f0ff" stroke-width="0.6" opacity="0.3"/>
-  <line x1="40" y1="12" x2="34" y2="14.5" stroke="#a855f7" stroke-width="0.6" opacity="0.3"/>
-  <line x1="4" y1="32" x2="10" y2="29.5" stroke="#ff1e6f" stroke-width="0.6" opacity="0.3"/>
-  <line x1="40" y1="32" x2="34" y2="29.5" stroke="#a855f7" stroke-width="0.6" opacity="0.3"/>
-
-  <!-- Core eye / diamond -->
-  <polygon points="22,15 30,22 22,29 14,22" fill="none" stroke="#00f0ff" stroke-width="1.4" filter="url(#gl)"/>
-
-  <!-- Inner diamond -->
-  <polygon points="22,18 27,22 22,26 17,22" fill="url(#g1)" opacity="0.15"/>
-
-  <!-- Center dot -->
-  <circle cx="22" cy="22" r="2" fill="#00f0ff" filter="url(#gl)"/>
-
-  <!-- Corner nodes -->
-  <circle cx="22" cy="2" r="1.2" fill="#00f0ff" opacity="0.6"/>
-  <circle cx="40" cy="12" r="1" fill="#a855f7" opacity="0.5"/>
-  <circle cx="40" cy="32" r="1" fill="#a855f7" opacity="0.5"/>
-  <circle cx="22" cy="42" r="1.2" fill="#ff1e6f" opacity="0.6"/>
-  <circle cx="4" cy="32" r="1" fill="#ff1e6f" opacity="0.5"/>
-  <circle cx="4" cy="12" r="1" fill="#00f0ff" opacity="0.5"/>
+  <!-- Outer circle — uses currentColor so it adapts to theme -->
+  <circle cx="18" cy="18" r="16" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
+  <!-- Inner filled circle — accent gradient -->
+  <circle cx="18" cy="18" r="10" fill="url(#g)"/>
+  <!-- Highlight -->
+  <circle cx="14.5" cy="14.5" r="4" fill="rgba(255,255,255,0.25)"/>
+  <!-- Small dot accent -->
+  <circle cx="22" cy="22" r="1.5" fill="rgba(255,255,255,0.15)"/>
 </svg>

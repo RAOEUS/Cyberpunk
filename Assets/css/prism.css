@@ -1,13 +1,12 @@
-/* PrismJS - Cyberpunk theme
- * Modern syntax highlighting tuned for the Cyberpunk Kanboard theme
+/* PrismJS - Neumorphism theme
+ * Soft, readable syntax highlighting
  */
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #e2eafc;
+	color: var(--text-1, #e8e8f0);
 	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: 'Iosevka Term NF', 'Iosevka Nerd Font', 'Iosevka Term', 'JetBrains Mono', 'Fira Code', monospace;
+	font-family: 'Iosevka Term NF', 'Fira Code', 'Cascadia Code', Consolas, monospace;
 	font-size: 0.9em;
 	text-align: left;
 	white-space: pre;
@@ -15,18 +14,15 @@ pre[class*="language-"] {
 	word-break: normal;
 	word-wrap: normal;
 	line-height: 1.6;
-
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;
-
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
 }
 
-/* Code blocks */
 pre[class*="language-"] {
 	padding: 1.2em;
 	margin: .5em 0;
@@ -35,151 +31,54 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #06080f;
-	border: 1px solid rgba(100, 130, 180, 0.12);
+	background: var(--neu-inset, #1a1a2a);
+	border: none;
+	box-shadow: var(--shadow-neu-inset-sm, inset 2px 2px 5px rgba(10,10,20,0.6), inset -1px -1px 4px rgba(60,60,90,0.15));
+	border-radius: var(--radius-sm, 8px);
 }
 
-/* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .2em .4em;
+	padding: .2em .5em;
 	white-space: normal;
-	background: rgba(100, 130, 180, 0.1);
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #566380;
-	font-style: italic;
-}
+.token.comment, .token.prolog, .token.doctype, .token.cdata { color: #6a6a82; font-style: italic }
+.token.punctuation { color: #a0a0b8 }
+.token.namespace { opacity: .7 }
+.token.property, .token.tag, .token.constant, .token.symbol, .token.deleted { color: #f87171 }
+.token.boolean, .token.number { color: #c084fc }
+.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted { color: #34d399 }
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string, .token.variable { color: #e8e8f0 }
+.token.atrule, .token.attr-value, .token.function, .token.class-name { color: #fbbf24 }
+.token.keyword { color: #7c6aef }
+.token.regex, .token.important { color: #fb923c }
+.token.important, .token.bold { font-weight: bold }
+.token.italic { font-style: italic }
+.token.entity { cursor: help }
 
-.token.punctuation {
-	color: #8899b8;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #ff2d7b;
-}
-
-.token.boolean,
-.token.number {
-	color: #b44dff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #2dff6e;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #e2eafc;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-	color: #ffe34d;
-}
-
-.token.keyword {
-	color: #00f0ff;
-}
-
-.token.regex,
-.token.important {
-	color: #ff8c42;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}
-
-div.code-toolbar {
-	position: relative;
-}
-
-div.code-toolbar > .toolbar {
-	position: absolute;
-	top: .5em;
-	right: .5em;
-	transition: opacity 0.3s ease-in-out;
-	opacity: 0;
-}
-
-div.code-toolbar:hover > .toolbar {
-	opacity: 1;
-}
-
-div.code-toolbar:focus-within > .toolbar {
-	opacity: 1;
-}
-
-div.code-toolbar > .toolbar .toolbar-item {
-	display: inline-block;
-}
-
-div.code-toolbar > .toolbar a {
-	cursor: pointer;
-}
-
-div.code-toolbar > .toolbar button {
-	background: none;
-	border: 0;
-	color: inherit;
-	font: inherit;
-	line-height: normal;
-	overflow: visible;
-	padding: 0;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-}
+div.code-toolbar { position: relative }
+div.code-toolbar > .toolbar { position: absolute; top: .5em; right: .5em; transition: opacity 0.3s; opacity: 0 }
+div.code-toolbar:hover > .toolbar { opacity: 1 }
+div.code-toolbar:focus-within > .toolbar { opacity: 1 }
+div.code-toolbar > .toolbar .toolbar-item { display: inline-block }
+div.code-toolbar > .toolbar a { cursor: pointer }
+div.code-toolbar > .toolbar button { background: none; border: 0; color: inherit; font: inherit; line-height: normal; overflow: visible; padding: 0 }
 
 div.code-toolbar > .toolbar a,
 div.code-toolbar > .toolbar button,
 div.code-toolbar > .toolbar span {
-	color: #8899b8;
+	color: var(--text-3, #6a6a82);
 	font-size: .8em;
 	padding: 4px 10px;
-	background: rgba(0, 240, 255, 0.08);
-	border: 1px solid rgba(0, 240, 255, 0.15);
+	background: var(--neu-surface, #252538);
+	border-radius: var(--radius-xs, 4px);
+	box-shadow: var(--shadow-neu-sm);
 	transition: all 0.2s ease;
 }
 
 div.code-toolbar > .toolbar a:hover,
-div.code-toolbar > .toolbar a:focus,
 div.code-toolbar > .toolbar button:hover,
-div.code-toolbar > .toolbar button:focus,
-div.code-toolbar > .toolbar span:hover,
-div.code-toolbar > .toolbar span:focus {
-	color: #00f0ff;
-	background: rgba(0, 240, 255, 0.15);
+div.code-toolbar > .toolbar span:hover {
+	color: var(--neu-accent, #7c6aef);
 	text-decoration: none;
 }

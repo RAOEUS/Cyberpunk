@@ -1,42 +1,19 @@
-# Cyberpunk
+# Neumorphism
 
-A Cyberpunk 2077-inspired theme for [Kanboard](https://kanboard.org/). 
+A clean, modern neumorphic theme for [Kanboard](https://kanboard.org/) with dark and light modes, smooth animations, and 3D background effects.
 
-## Screenshots
-
-### Board View
-![Board](Assets/images/screenshots/board.png)
-
-### Task Detail
-![Task Detail](Assets/images/screenshots/task-detail.png)
-
-### Task List
-![Task List](Assets/images/screenshots/task-list.png)
-
-### Project Overview
-![Project Overview](Assets/images/screenshots/project-overview.png)
-
-### Dashboard
-![Dashboard](Assets/images/screenshots/dashboard.png)
-
-### Analytics
-![Analytics](Assets/images/screenshots/analytics.png)
+> **Branch note:** This is the `neumorphism` branch. For the cyberpunk theme, switch to `master`.
 
 ## Features
 
-- **CP2077 aesthetic** - Angular Chakra Petch display font, Iosevka monospace body, sharp zero-radius edges, neon cyan/magenta/purple accents
-- **Animated header** - Rainbow neon gradient line with smooth looping animation
-- **Scanlines + CRT vignette** - Subtle overlay for that authentic retro-future feel
-- **Digital glitch on hover** - Randomized clip-path tears, opacity flashes, hue corruption, RGB channel split shadows on every interactive element
-- **Periodic title glitch** - Header title glitches randomly, faster when hovered
-- **GSAP animations** - Staggered entrance animations for cards, columns, nav items, modals, dropdowns, overview stats (with count-up)
-- **Drag-and-drop fix** - Clean card dragging with no lag or position offset
-- **Custom SVG logo** - Hexagonal cyber-eye emblem, links to dashboard
-- **Full C3 chart theming** - Dark tooltips, themed axes and grid lines
-- **WCAG AA contrast** - All text passes 4.5:1 minimum contrast ratio
-- **Syntax highlighting** - 151+ languages via Prism.js, tuned to the neon palette
+- **Neumorphic design** - Soft raised/inset shadows on every surface, giving a tactile 3D feel
+- **Dark & light modes** - Cookie-based toggle (bottom-right button), persists across sessions
+- **Three.js background** - Floating 3D geometric shapes (spheres, cubes, tori, octahedra) that respond to mouse movement, with theme-aware colors
+- **GSAP animations** - Smooth entrance animations, neumorphic press/release hover effects on cards and buttons, staggered dropdowns and modals
+- **Inter font** - Clean variable-weight sans-serif for the UI, Iosevka monospace for code
+- **Syntax highlighting** - 151+ languages via Prism.js with soft, readable colors
 - **Customizer plugin support** - Compatible with the [Customizer](https://github.com/creecros/Customizer) plugin
-- **Bundled fonts** - Chakra Petch (display) + Iosevka Term Nerd Font (mono), no external CDN dependencies
+- **WCAG AA contrast** - Readable text in both dark and light modes
 
 ## Requirements
 
@@ -46,10 +23,10 @@ A Cyberpunk 2077-inspired theme for [Kanboard](https://kanboard.org/).
 
 1. Install from the Kanboard plugin manager, **or**
 2. Download the zip and extract to `plugins/Cyberpunk`, **or**
-3. Clone this repository into your Kanboard plugins directory:
+3. Clone the neumorphism branch into your Kanboard plugins directory:
    ```
    cd /path/to/kanboard/plugins
-   git clone https://github.com/RAOEUS/cyberpunk-kanboard.git Cyberpunk
+   git clone -b neumorphism https://github.com/RAOEUS/cyberpunk-kanboard.git Cyberpunk
    ```
 
 > The folder **must** be named `Cyberpunk` (case-sensitive) — Kanboard loads plugins by folder name.
@@ -60,23 +37,13 @@ On first run, the plugin copies a config file to `data/files/Cyberpunk/config.ph
 
 ### Custom Logo
 
-Replace the default logo by editing `data/files/Cyberpunk/config.php`:
-
 ```php
 $themeCyberpunkConfig['logo'] = 'plugins/Cyberpunk/Assets/images/your-logo.svg';
 ```
 
-### Disable Glitch Effects
+### Theme Mode
 
-The hover glitch effects (clip-path tears, RGB split, opacity flashes, hue corruption) can be turned off site-wide by adding this to Kanboard's **Settings > Custom Stylesheet**:
-
-```css
-:root {
-    --glitch-enabled: 0;
-}
-```
-
-Set back to `1` (or remove the override) to re-enable.
+Click the sun/moon toggle button in the bottom-right corner to switch between dark and light modes. Your preference is saved in a cookie and persists across sessions.
 
 ## Syntax Highlighting
 
@@ -97,7 +64,3 @@ class BaseClass {
 ## License
 
 MIT
-
-## Credits
-
-Originally based on [Nebula](https://github.com/kenlog/nebula) by Valentino Pesce.

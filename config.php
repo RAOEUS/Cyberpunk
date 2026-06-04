@@ -1,11 +1,10 @@
 <?php
 /*******************************************************************/
-/* if you want to change the values */
+/* Neumorphism Theme Configuration                                 */
 /*******************************************************************/
 
-// Replace the KB logo with your own logo
-// Just copy your logo-file in the "data/files/Cyberpunk/Assets/images"
-// The file should be to 50 Pixel is a good height
-// Uncomment the next line.
+// Replace the default logo with your own
+// Copy your logo file to "plugins/Cyberpunk/Assets/images/"
+// A height of ~32px works well
 
-$themeCyberpunkConfig['logo'] = 'plugins/Cyberpunk/Assets/images/brand-logo.png';
+$themeCyberpunkConfig['logo'] = 'plugins/Cyberpunk/Assets/images/brand-logo.svg';

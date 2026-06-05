@@ -49,9 +49,9 @@ $(document).ready(function () {
 
     function applyMode(mode) {
         if (mode === 'light' || (mode === 'system' && !systemPrefersDark())) {
-            document.body.classList.add('light-mode');
+            document.documentElement.classList.add('light-mode');
         } else {
-            document.body.classList.remove('light-mode');
+            document.documentElement.classList.remove('light-mode');
         }
     }
 

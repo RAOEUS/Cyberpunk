@@ -61,7 +61,7 @@
     --speed: 0.2s ease;
 }
 
-body.light-mode {
+html.light-mode {
     --neu: #e0e5ec;
     --neu-dark: #a3b1c6;
     --neu-light: #ffffff;
@@ -645,33 +645,49 @@ input[type="checkbox"] { accent-color: var(--accent) }
 #backToTop i:before { position: relative; left: 10px; top: 0; display: block; width: 50px; color: var(--accent); font-size: 24px; transition: all 0.3s }
 #backToTop:hover i:before { top: 8px }
 
-div.ganttview-vtheader,div.ganttview-vtheader-item-name,div.ganttview-vtheader-series,div.ganttview-grid { float: left }
-div.ganttview-hzheader-months,div.ganttview-hzheader-days,div.ganttview-grid-row { display: flex; flex-wrap: nowrap }
-div.ganttview-hzheader-month,div.ganttview-hzheader-day,div.ganttview-grid-row-cell { flex: none }
-div.ganttview { border: none; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--sh-out-sm) }
-div.ganttview-hzheader-month { width: 60px; height: 20px; border-right: 1px solid rgba(0,0,0,0.06); line-height: 20px; background: var(--neu); color: var(--t2); font-size: 0.85em; font-weight: 600; text-align: center }
-div.ganttview-hzheader-day { width: 20px; height: 20px; border-right: 1px solid rgba(0,0,0,0.04); border-top: 1px solid rgba(0,0,0,0.04); line-height: 20px; color: var(--t3) !important; font-size: 0.8em; text-align: center }
-div.ganttview-vtheader { margin-top: 41px; width: 400px; background: var(--neu) }
-div.ganttview-vtheader-series-name { width: 400px; height: 31px; line-height: 31px; padding-left: 8px; color: var(--t2) !important; background: var(--neu) !important; border-top: 1px solid rgba(0,0,0,0.04) }
+div.ganttview { border: none; border-radius: var(--radius-sm); box-shadow: var(--sh-out-sm) }
+div.ganttview-hzheader-month { border-color: rgba(0,0,0,0.06); background: var(--neu); color: var(--t2) }
+div.ganttview-hzheader-day { border-color: rgba(0,0,0,0.04); color: var(--t3) !important }
+div.ganttview-vtheader { background: var(--neu) }
+div.ganttview-vtheader-series-name { color: var(--t2) !important; background: var(--neu) !important; border-color: rgba(0,0,0,0.04) }
 div.ganttview-vtheader-series-name a { color: var(--t2) !important }
 div.ganttview-vtheader-series-name a:hover { color: var(--accent) !important }
-.ganttview-subtask-row { opacity: 1 !important }
-.ganttview-subtask-row .ganttview-vtheader-assignee { opacity: 0.7 }
-div.ganttview-slide-container { overflow: auto; border-left: 1px solid rgba(0,0,0,0.06) }
-div.ganttview-grid-row-cell { width: 20px; height: 31px; border-right: 1px solid rgba(0,0,0,0.15) !important; border-top: 1px solid rgba(0,0,0,0.03); background: var(--neu) }
+div.ganttview-slide-container { border-color: rgba(0,0,0,0.06) }
+div.ganttview-grid-row-cell { border-color: rgba(0,0,0,0.15) rgba(0,0,0,0.03); background: var(--neu) }
 div.ganttview-grid-row-cell.ganttview-weekend { background: var(--weekend) !important }
 div.ganttview-grid-row-cell.ganttview-today { background: var(--accent-subtle) !important }
-div.ganttview-blocks { margin-top: 0 }
-div.ganttview-block-container { height: 32px; padding-top: 3px; box-sizing: border-box; border-top: 1px solid rgba(0,0,0,0.12) }
-div.ganttview-block { position: relative; height: 25px; border: none; border-radius: var(--radius-xs); box-shadow: inset 0 0 0 2px #000; transition: filter var(--speed), transform var(--speed) }
-div.ganttview-block:hover { opacity: 1 !important; box-shadow: inset 0 0 0 2px #000 !important; transform: translateY(-1px); filter: brightness(1.15); z-index: 5 }
-.ganttview-block-movable { cursor: move }
+div.ganttview-block-container { border-color: rgba(0,0,0,0.12) }
+div.ganttview-block { border: none; border-radius: var(--radius-xs); box-shadow: inset 0 0 0 2px #000; transition: filter var(--speed), transform var(--speed) }
+div.ganttview-block:hover { opacity: 1 !important; box-shadow: inset 0 0 0 2px #000 !important; filter: brightness(1.15) }
 div.ganttview-block-text { color: #000; text-shadow: 0 1px 0 rgba(255,255,255,0.3) }
-div.ganttview-progress-bar { z-index: 0; position: absolute; top: 0; bottom: 0; opacity: 0.3; background: var(--success); border-radius: var(--radius-xs) }
+div.ganttview-progress-bar { background: var(--success); border-radius: var(--radius-xs) }
 .ganttview-block-edit { color: #000 !important; text-decoration: none !important }
-.ganttview-date-indicator { display: none; position: fixed; z-index: 10000; padding: 5px 12px; border-radius: var(--radius-xs); background: var(--neu); color: var(--accent); font-size: 0.78em; font-weight: 700; font-family: var(--font-display); letter-spacing: -0.01em; box-shadow: var(--sh-out); white-space: nowrap; pointer-events: none; transform: translateX(-50%) }
+.ganttview-date-indicator { background: var(--neu); color: var(--accent); font-family: var(--font-display); border-radius: var(--radius-xs); box-shadow: var(--sh-out) }
 .ganttview-dep-svg path { stroke: var(--t1) !important }
 .ganttview-dep-svg polygon { fill: var(--t1) !important }
+.ganttview-group-grid-row { background: var(--neu) !important }
+.ganttview-group-block-row { background: var(--neu) !important }
+.ganttview-group-grid-row > .ganttview-grid-row-cell { border-top-color: var(--neu-light) }
+div.ganttview-group-header { background: var(--neu-dark) !important; border-color: var(--neu-light) !important }
+html.light-mode div.ganttview-group-header { background: color-mix(in srgb, var(--neu), var(--neu-dark) 30%) !important }
+.ganttview-group-header:hover { background: var(--neu-light) !important }
+.ganttview-group-header strong { color: var(--t2) !important }
+#gantt-group-select { background: var(--neu); color: var(--t2); border-color: var(--neu-dark); box-shadow: var(--sh-in-sm); border-radius: var(--radius-xs) }
+.gantt-zoom-btn { background: var(--neu) !important; color: var(--t2) !important; border: 1px solid var(--neu-dark) !important; box-shadow: none !important; border-radius: var(--radius-xs) !important }
+.gantt-zoom-btn:hover { background: var(--neu-light) !important; color: var(--t1) !important; border-color: var(--accent) !important; box-shadow: none !important }
+.gantt-zoom-btn.active { background: var(--accent) !important; color: #fff !important; border-color: var(--accent) !important; box-shadow: none !important }
+.gantt-help-modal { background: var(--neu) !important; border: 1px solid var(--neu-light); box-shadow: 0 12px 40px rgba(0,0,0,0.5) !important }
+.gantt-help-body { scrollbar-width: thin; scrollbar-color: var(--neu-dark) transparent }
+.gantt-help-header { border-color: rgba(255,255,255,0.06) !important }
+.gantt-help-header h2 { color: var(--t1) !important }
+.gantt-help-close { color: var(--t3) !important }
+.gantt-help-close:hover { color: var(--t1) !important }
+.gantt-help-section h3 { color: var(--t1) !important; border-color: rgba(255,255,255,0.06) !important }
+.gantt-help-section h3 i { color: var(--accent) !important }
+.gantt-help-section p { color: var(--t2) !important }
+.gantt-help-table td { color: var(--t2) !important }
+.gantt-help-table .gantt-help-key { color: var(--t1) !important }
+.gantt-help-table tr { border-color: rgba(255,255,255,0.04) !important }
 
 .c3-tooltip { background: var(--neu) !important; border: none !important; border-radius: var(--radius-sm) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.25) !important; font-family: var(--font) !important }
 .c3-tooltip th { background: var(--neu) !important; color: var(--t1) !important; padding: 10px 14px !important; border-bottom: 1px solid rgba(0,0,0,0.06) !important }
@@ -713,6 +729,10 @@ label, legend, a, p, h1, h2, h3, li, span, div:not([class*="color-"]), section, 
 div.ganttview-grid-row-cell { border-color: #c0c0c0 !important }
 div.ganttview-block-container { border-top-color: #c0c0c0 !important }
 div.ganttview-vtheader-series-name { border-top-color: #c0c0c0 !important }
+.ganttview.zoom-week .ganttview-hzheader-day.ganttview-week-start { box-shadow: inset 1px 0 0 var(--accent) !important }
+.ganttview.zoom-week .ganttview-grid-row-cell.ganttview-week-start { box-shadow: inset 1px 0 0 var(--accent) !important }
+.ganttview.zoom-month .ganttview-hzheader-day.ganttview-month-start { box-shadow: inset 1px 0 0 var(--accent) !important }
+.ganttview.zoom-month .ganttview-grid-row-cell.ganttview-month-start { box-shadow: inset 1px 0 0 var(--accent) !important }
 
 /* ── CSS HOVER EFFECTS (no GSAP, CSS vars resolve correctly) ── */
 .task-board:hover,

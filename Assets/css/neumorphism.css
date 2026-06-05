@@ -646,21 +646,23 @@ input[type="checkbox"] { accent-color: var(--accent) }
 div.ganttview-hzheader-month,div.ganttview-hzheader-day,div.ganttview-vtheader,div.ganttview-vtheader-item-name,div.ganttview-vtheader-series,div.ganttview-grid,div.ganttview-grid-row-cell { float: left }
 div.ganttview { border: none; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--sh-out-sm) }
 div.ganttview-hzheader-month { width: 60px; height: 20px; border-right: 1px solid rgba(0,0,0,0.06); line-height: 20px; background: var(--neu); color: var(--t2); font-size: 0.85em; font-weight: 600; text-align: center }
-div.ganttview-hzheader-day { width: 20px; height: 20px; border-right: 1px solid rgba(0,0,0,0.04); border-top: 1px solid rgba(0,0,0,0.04); line-height: 20px; color: var(--t3) !important; font-size: 0.8em; text-align: center }
+div.ganttview-hzheader-day { box-sizing: border-box; width: 21px; height: 20px; border-right: 1px solid rgba(0,0,0,0.04); border-top: 1px solid rgba(0,0,0,0.04); line-height: 20px; color: var(--t3) !important; font-size: 0.8em; text-align: center }
 div.ganttview-vtheader { margin-top: 41px; width: 400px; background: var(--neu) }
 div.ganttview-vtheader-series-name { width: 400px; height: 31px; line-height: 31px; padding-left: 8px; color: var(--t2) !important; background: var(--neu) !important; border-top: 1px solid rgba(0,0,0,0.04) }
 div.ganttview-vtheader-series-name a { color: var(--t2) !important }
 div.ganttview-vtheader-series-name a:hover { color: var(--accent) !important }
 div.ganttview-slide-container { overflow: auto; border-left: 1px solid rgba(0,0,0,0.06) }
-div.ganttview-grid-row-cell { width: 20px; height: 31px; border-right: 1px solid rgba(0,0,0,0.03); border-top: 1px solid rgba(0,0,0,0.03); background: var(--neu) }
-div.ganttview-grid-row-cell.ganttview-weekend { background: rgba(0,0,0,0.02) !important }
+div.ganttview-grid-row-cell { box-sizing: border-box; width: 21px; height: 31px; border-right: 1px solid rgba(0,0,0,0.15) !important; border-top: 1px solid rgba(0,0,0,0.03); background: var(--neu) }
+div.ganttview-grid-row-cell.ganttview-weekend { background: rgba(0,0,0,0.07) !important }
 div.ganttview-grid-row-cell.ganttview-today { background: var(--accent-subtle) !important }
 div.ganttview-blocks { margin-top: 40px }
 div.ganttview-block-container { height: 28px; padding-top: 4px }
-div.ganttview-block { position: relative; height: 25px; background: var(--accent); border: none; border-radius: var(--radius-xs); box-shadow: var(--sh-out-sm) }
+div.ganttview-block { position: relative; height: 25px; border: none; border-radius: var(--radius-xs); box-shadow: inset 0 0 0 2px #000; transition: filter var(--speed), transform var(--speed) }
+div.ganttview-block:hover { opacity: 1 !important; box-shadow: inset 0 0 0 2px #000 !important; transform: translateY(-1px); filter: brightness(1.15); z-index: 5 }
 .ganttview-block-movable { cursor: move }
-div.ganttview-block-text { position: absolute; height: 12px; font-size: 0.7em; color: #fff; padding: 2px 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+div.ganttview-block-text { display: none }
 div.ganttview-progress-bar { z-index: 0; position: absolute; top: 0; bottom: 0; opacity: 0.4; background: var(--success); border-radius: var(--radius-xs) }
+.ganttview-date-indicator { display: none; position: fixed; z-index: 10000; padding: 5px 12px; border-radius: var(--radius-xs); background: var(--neu); color: var(--accent); font-size: 0.78em; font-weight: 700; font-family: var(--font-display); letter-spacing: -0.01em; box-shadow: var(--sh-out); white-space: nowrap; pointer-events: none; transform: translateX(-50%) }
 
 .c3-tooltip { background: var(--neu) !important; border: none !important; border-radius: var(--radius-sm) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.25) !important; font-family: var(--font) !important }
 .c3-tooltip th { background: var(--neu) !important; color: var(--t1) !important; padding: 10px 14px !important; border-bottom: 1px solid rgba(0,0,0,0.06) !important }
@@ -699,6 +701,7 @@ ul.dropdown-submenu-open, #select-dropdown-menu, #suggest-menu,
 label, legend, a, p, h1, h2, h3, li, span, div:not([class*="color-"]), section, nav {
     border-color: transparent !important;
 }
+div.ganttview-grid-row-cell { border-right-color: rgba(0,0,0,0.15) !important }
 
 /* ── CSS HOVER EFFECTS (no GSAP, CSS vars resolve correctly) ── */
 .task-board:hover,
@@ -725,7 +728,7 @@ label, legend, a, p, h1, h2, h3, li, span, div:not([class*="color-"]), section, 
 #board th.board-column-header, .sidebar, header,
 #neu-theme-toggle, #backToTop span, fieldset,
 .views li, .btn, .select2-container--default .select2-selection--multiple .select2-selection__choice,
-.task-tags li, .color-picker-square, .ganttview-block {
+.task-tags li, .color-picker-square {
     background: var(--neu) !important;
 }
 

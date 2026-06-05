@@ -57,6 +57,7 @@
     --radius: 16px;
     --radius-sm: 10px;
     --radius-xs: 6px;
+    --weekend: #232335;
     --speed: 0.2s ease;
 }
 
@@ -72,6 +73,7 @@ body.light-mode {
     --accent-hover: #5a3bd6;
     --accent-subtle: rgba(108, 77, 230, 0.08);
     --accent-text: #6c4de6;
+    --weekend: #d0d4da;
     --t1: #2a2d35;
     --t2: #454b5c;
     --t3: #6b7280;
@@ -653,9 +655,11 @@ div.ganttview-vtheader { margin-top: 41px; width: 400px; background: var(--neu) 
 div.ganttview-vtheader-series-name { width: 400px; height: 31px; line-height: 31px; padding-left: 8px; color: var(--t2) !important; background: var(--neu) !important; border-top: 1px solid rgba(0,0,0,0.04) }
 div.ganttview-vtheader-series-name a { color: var(--t2) !important }
 div.ganttview-vtheader-series-name a:hover { color: var(--accent) !important }
+.ganttview-subtask-row { opacity: 1 !important }
+.ganttview-subtask-row .ganttview-vtheader-assignee { opacity: 0.7 }
 div.ganttview-slide-container { overflow: auto; border-left: 1px solid rgba(0,0,0,0.06) }
 div.ganttview-grid-row-cell { width: 20px; height: 31px; border-right: 1px solid rgba(0,0,0,0.15) !important; border-top: 1px solid rgba(0,0,0,0.03); background: var(--neu) }
-div.ganttview-grid-row-cell.ganttview-weekend { background: #d0d4da !important }
+div.ganttview-grid-row-cell.ganttview-weekend { background: var(--weekend) !important }
 div.ganttview-grid-row-cell.ganttview-today { background: var(--accent-subtle) !important }
 div.ganttview-blocks { margin-top: 0 }
 div.ganttview-block-container { height: 32px; padding-top: 3px; box-sizing: border-box; border-top: 1px solid rgba(0,0,0,0.12) }
